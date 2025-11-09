@@ -380,3 +380,250 @@ a {
 .box-018::after {
     right: 9px;
 }
+
+.taitoru {
+    position: relative;
+    display: inline-block;
+}
+
+.taitoru img {
+    display: block;
+    width: 50%;
+    height: auto;
+    margin-left: 25%;
+}
+
+.taitoru-text {
+    /* 位置の調整 */
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* 画像周りの背景色 */
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    font-size: 6vw;
+    text-align: center;
+}
+
+.mokuzi {
+    position: relative;
+    display: inline-block;
+}
+
+.mokuzi img {
+    display: block;
+    width: 50%;
+    height: auto;
+    margin-left: 25%;
+}
+
+.mokuzi-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* 画像周りの背景色 */
+    color: rgb(0, 0, 0);
+    font-size: 3vw;
+    text-align: center;
+    margin-left: -2%;
+}
+
+@media screen and (max-width: 768px) {
+    .mokuzi-text {
+        margin-left: -5%;
+    }
+}
+
+.sagyou {
+    display: flex;
+
+}
+
+.sagyou-text {
+    width: 50%;
+    margin-left: 30%;
+}
+
+@media screen and (max-width: 768px) {
+    .sagyou {
+        flex-direction: column;
+    }
+
+    .sagyou-text {
+        margin-left: 30%;
+    }
+
+}
+
+.sagyou-text1 {
+    margin-left: 20%;
+    font-size: 2vw;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .sagyou-text1 {
+        font-size: 6vw;
+        margin-left: -10%;
+    }
+
+}
+
+.read-more-1 {
+    position: relative;
+}
+
+.read-more-1 p {
+    position: relative;
+    max-height: 100px;
+    /* 開く前に見せたい高さを指定 */
+    margin-bottom: 0;
+    overflow: hidden;
+    transition: max-height 1s;
+}
+
+.read-more-1:has(:checked) p {
+    max-height: 100vh;
+}
+
+.read-more-1 p::after {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(180deg, hsla(0, 0%, 100%, 0) 0, hsla(0, 0%, 100%, .9) 50%, hsla(0, 0%, 100%, .9) 0, #fff);
+    content: '';
+}
+
+.read-more-1:has(:checked) p::after {
+    content: none;
+}
+
+.read-more-1 label {
+    display: flex;
+    align-items: center;
+    gap: 0 4px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #4f96f6;
+    font-size: .8em;
+}
+
+.read-more-1 label:hover {
+    color: #8e1a1a;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.read-more-1:has(:checked) label {
+    display: none;
+}
+
+.read-more-1 label::after {
+    display: inline-block;
+    width: 10px;
+    height: 5px;
+    background-color: #b6bdc3;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+    content: '';
+}
+
+.read-more-1 input {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .aa {
+        margin-left: 11%;
+    }
+}
+
+.ai {
+    width: 50%;
+    height: auto;
+    margin-left: 30%;
+}
+
+@media screen and (max-width: 768px) {
+    .ai {
+        margin-top: 10%;
+        margin-left: 25%;
+    }
+}
+
+.sa-text {
+    transform: rotate(20deg);
+    margin-left: 65%;
+    margin-top: -10%;
+    font-size: 6vw;
+    writing-mode: vertical-rl;
+    /* 縦書き（右→左） */
+    text-orientation: upright;
+    margin-top: 10%;
+
+}
+
+@media screen and (max-width: 768px) {
+    .sa {
+        width: 50%;
+        height: auto;
+
+    }
+}
+
+.tab-4 {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 500px;
+}
+
+.tab-4>label {
+    flex: 1 1;
+    order: -1;
+    position: relative;
+    min-width: 70px;
+    padding: .7em 1em;
+    background-color: #f2f2f2;
+    color: #999;
+    font-size: .9em;
+    text-align: center;
+    cursor: pointer;
+}
+
+.tab-4>label:hover,
+.tab-4 label:has(:checked) {
+    background-color: #2589d0;
+    color: #fff;
+}
+
+.tab-4 label:has(:checked)::before {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18px;
+    height: 9px;
+    background-color: #2589d0;
+    content: '';
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.tab-4 input {
+    display: none;
+}
+
+.tab-4>div {
+    display: none;
+    width: 100%;
+    padding: 1.5em 1em;
+}
+
+.tab-4 label:has(:checked)+div {
+    display: block;
+}
